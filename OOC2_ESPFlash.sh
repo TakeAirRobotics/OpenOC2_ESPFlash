@@ -26,7 +26,7 @@ sleep 1
 read -p "Remove jumper J9, then press enter"
 
 echo "Device should now be in update mode, uploading binary"
-python -m esptool.py -p /dev/ttyTHS1 write_flash 0 $1
+python -m esptool -p /dev/ttyTHS1 write_flash 0 $1
 
 echo "Finished, resetting device to run from FLASH content"
 echo "0" > /sys/class/gpio/gpio33/value
